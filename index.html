@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Day to Day Reading Activities</title>
   
   <link rel="icon" type="image/png" href="https://i.postimg.cc/6p7vDP0S/WBSEDCL-LOGO.png">
@@ -11,14 +11,17 @@
     body, html { 
       margin: 0; 
       padding: 0; 
-      height: 100%; 
       width: 100%;
+      height: 100dvh; /* 🚨 এটি মোবাইলের অ্যাড্রেস বার অনুযায়ী স্ক্রিন পারফেক্টভাবে ফিট করবে 🚨 */
       overflow: hidden; 
       background-color: #f0f4f8; 
     }
     iframe {
+      position: absolute;
+      top: -46px; /* 🚨 গুগলের ব্যানারটিকে সঠিকভাবে ওপরে টেনে হাইড করবে 🚨 */
+      left: 0;
       width: 100%;
-      height: calc(100% + 55px); /* গুগলের ব্যানার লুকানোর জন্য */
+      height: calc(100dvh + 46px); /* 🚨 নিচের দিকটা যাতে না কেটে যায় তার এক্সাক্ট মাপ 🚨 */
       border: none;
       display: block;
     }
