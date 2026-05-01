@@ -2,32 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- 🚨 জুম হওয়া বন্ধ করার জন্য পারফেক্ট ভিউপোর্ট 🚨 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <title>Day to Day Reading Activities</title>
-  
   <link rel="icon" type="image/png" href="https://i.postimg.cc/6p7vDP0S/WBSEDCL-LOGO.png">
   
   <style>
+    /* ডিফল্ট মার্জিন এবং প্যাডিং শূন্য করা হলো */
     body, html { 
       margin: 0; 
       padding: 0; 
       width: 100%;
-      height: 100dvh; /* 🚨 এটি মোবাইলের অ্যাড্রেস বার অনুযায়ী স্ক্রিন পারফেক্টভাবে ফিট করবে 🚨 */
-      overflow: hidden; 
+      height: 100%; 
+      overflow: hidden; /* বাইরের স্ক্রলবার বন্ধ করার জন্য */
       background-color: #f0f4f8; 
+      box-sizing: border-box;
     }
-    iframe {
-      position: absolute;
-      top: -46px; /* 🚨 গুগলের ব্যানারটিকে সঠিকভাবে ওপরে টেনে হাইড করবে 🚨 */
+    
+    /* 🚀 স্মার্ট কভার: এটি স্ক্রিনকে জুম হতে দেবে না 🚀 */
+    .iframe-wrapper {
+      position: fixed; /* absolute এর বদলে fixed দিলে স্ক্রলিং/জুম ইস্যু হয় না */
+      top: -46px; /* গুগলের ব্যানার হাইড করার ট্রিক */
       left: 0;
       width: 100%;
-      height: calc(100dvh + 46px); /* 🚨 নিচের দিকটা যাতে না কেটে যায় তার এক্সাক্ট মাপ 🚨 */
+      height: calc(100vh + 46px); /* নিচের দিকটা অ্যাডজাস্ট করা হলো */
+    }
+    
+    /* ভেতরের ফ্রেমটি কভারের ১০০% জায়গা নেবে */
+    iframe {
+      width: 100%;
+      height: 100%;
       border: none;
       display: block;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbw9V7Z3ROY99x9Akc1ZJt1bL_PwvWb9LLBICzmTEOw0n2NRxojEXWyyvhmtvGSZv-kB/exec"></iframe>
+
+  <div class="iframe-wrapper">
+    <iframe src="https://script.google.com/macros/s/AKfycbw9V7Z3ROY99x9Akc1ZJt1bL_PwvWb9LLBICzmTEOw0n2NRxojEXWyyvhmtvGSZv-kB/exec"></iframe>
+  </div>
+
 </body>
 </html>
