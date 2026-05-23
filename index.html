@@ -2,32 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Day to Day Reading Activities</title>
-  
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/6p7vDP0S/WBSEDCL-LOGO.png">
   
   <style>
     body, html { 
-      margin: 0; 
-      padding: 0; 
-      width: 100%;
-      height: 100dvh; /* 🚨 এটি মোবাইলের অ্যাড্রেস বার অনুযায়ী স্ক্রিন পারফেক্টভাবে ফিট করবে 🚨 */
-      overflow: hidden; 
-      background-color: #f0f4f8; 
+      margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #ffffff;
     }
-    iframe {
+    
+    /* 🚨 মডার্ন রেসপন্সিভ ফ্রেম 🚨 */
+    #main-frame {
       position: absolute;
-      top: -46px; /* 🚨 গুগলের ব্যানারটিকে সঠিকভাবে ওপরে টেনে হাইড করবে 🚨 */
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100dvh + 46px); /* 🚨 নিচের দিকটা যাতে না কেটে যায় তার এক্সাক্ট মাপ 🚨 */
+      height: 100%;
       border: none;
-      display: block;
+      /* এটি মোবাইল ব্রাউজারের অটো-স্ক্রলিং হ্যান্ডেল করবে */
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbw9V7Z3ROY99x9Akc1ZJt1bL_PwvWb9LLBICzmTEOw0n2NRxojEXWyyvhmtvGSZv-kB/exec"></iframe>
+
+  <iframe id="main-frame" 
+          src="https://script.google.com/macros/s/AKfycbw9V7Z3ROY99x9Akc1ZJt1bL_PwvWb9LLBICzmTEOw0n2NRxojEXWyyvhmtvGSZv-kB/exec" 
+          allow="geolocation; microphone; camera">
+  </iframe>
+
+  <script>
+    // 🚨 স্ক্রিন রিসাইজ হলে ফ্রেম যেন নিজেকে ঠিক করে নেয় 🚨
+    window.addEventListener('resize', function() {
+        document.getElementById('main-frame').style.height = window.innerHeight + 'px';
+    });
+  </script>
 </body>
 </html>
